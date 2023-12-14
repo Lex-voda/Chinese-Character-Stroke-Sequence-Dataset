@@ -29,20 +29,19 @@ def convert_png_to_binary_jpg(png_path, jpg_path, value):
 
     cv2.imwrite(jpg_path, img_binary, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
-
-if __name__ == "__main__":
+def run():
     graphics = read_data_from_json("data_graphics.json")
     fort_category = read_data_from_json("fort_annotation.json")
-    for i, graphic in enumerate(tqdm(graphics, desc = 'create characters svg')):
-        folder_name = "chinese_kaiti_{:04d}".format(i+1)
+    for i, graphic in enumerate(tqdm(graphics, desc='create characters svg')):
+        folder_name = "chinese_kaiti_{:04d}".format(i + 1)
         os.makedirs('data/svg/' + folder_name)
         strokes = graphic["strokes"]
         for i, stroke in enumerate(strokes):
             svg_file_name = 'data/svg/' + folder_name + '/' + str(i) + '.svg'
-            svg_creator = generate_svg(svg_file_name, stroke)
+            generate_svg(svg_file_name, stroke)
 
     for i, graphic in enumerate(tqdm(graphics, desc='create characters png')):
-        folder_name = "chinese_kaiti_{:04d}".format(i+1)
+        folder_name = "chinese_kaiti_{:04d}".format(i + 1)
         os.makedirs('data/png/' + folder_name)
         strokes = graphic["strokes"]
         for j, stroke in enumerate(strokes):
@@ -51,7 +50,7 @@ if __name__ == "__main__":
             svg_to_png(svg_file_name, png_file_name)
 
     for i, graphic in enumerate(tqdm(graphics, desc='create characters binary_jpg')):
-        folder_name = "chinese_kaiti_{:04d}".format(i+1)
+        folder_name = "chinese_kaiti_{:04d}".format(i + 1)
         os.makedirs('data/jpg/' + folder_name)
         strokes = graphic["strokes"]
         category_id = fort_category[i]["category_id"]
@@ -59,4 +58,7 @@ if __name__ == "__main__":
             png_file_name = 'data/png/' + folder_name + '/' + str(j) + '.png'
             jpg_file_name = 'data/jpg/' + folder_name + '/' + str(j) + '.jpg'
             value = category_id[j]
-            convert_png_to_binary_jpg(png_file_name,jpg_file_name,value)
+            convert_png_to_binary_jpg(png_file_name, jpg_file_name, value)
+
+if __name__ == "__main__":
+    run()
