@@ -23,7 +23,7 @@
 pip install opencv-python svgwrite cairosvg 
 ```
 
-​	为了正确使用 cairosvg ，请前往[这里](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer.git)下载GTK-3并重启你的计算机（默认添加环境变量），直接下载链接在[这里](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases/download/2022-01-04/gtk3-runtime-3.24.31-2022-01-04-ts-win64.exe)。
+​	为了正确使用 cairosvg ，请前往[这里](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer.git)下载GTK-3并重启你的计算机（Windows系统）（默认添加环境变量），直接下载链接在[这里](https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases/download/2022-01-04/gtk3-runtime-3.24.31-2022-01-04-ts-win64.exe)。
 
 ​	本项目的部分文件只是为了保留数据集原始来源的参照，您可以移动以下文件到您的任何项目目录中，但请确保其在一个目录下：
 
@@ -32,6 +32,7 @@ data(空目录)
 run.py
 utils.py
 data_graphics.json
+fort_annotation.json
 ```
 
 ​	最后，执行命令开始生成数据：
@@ -44,4 +45,4 @@ python run.py
 
 #### 更新日志
 
-- 更新了多核优化
+- 更新了多核并发优化
