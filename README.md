@@ -41,3 +41,7 @@ python run.py
 ```
 
 ​	生成的笔画序列图储存在 data/jpg/ ，data/svg/ 和 data/png/ 可以按需删除。
+
+#### 更新日志
+
+- 更新了多核优化
