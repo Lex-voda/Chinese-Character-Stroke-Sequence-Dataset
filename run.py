@@ -39,7 +39,7 @@ def process_strokes(graphic, fort_category, i):
     folder_name = "chinese_kaiti_{:04d}".format(i + 1)
     os.makedirs('data/svg/' + folder_name)
     os.makedirs('data/png/' + folder_name)
-    os.makedirs('data/jpg/' + folder_name)
+    os.makedirs('data/npz/' + folder_name)
 
     strokes = graphic["strokes"]
     category_id = fort_category[i]["category_id"]
