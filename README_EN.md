@@ -15,7 +15,9 @@ The integrated annotation information is stored in `fort_graphics.json`.
 
 Like CCES, this dataset contains annotation information for 9523 Chinese characters, and all images are 1024*1024 binary images.
 
-The data generation script finally generates 9523 npz files, each of which is a compressed three-dimensional matrix. Each slice on the 0th dimension is a stroke of the character, arranged in stroke order. If stacked on the 0th dimension, it forms a complete character. This dataset retains as much information as possible for researchers to use.
+The data generation script ultimately generates 9523 npz files, each of which is a compressed three-dimensional matrix. Each slice on the 0th dimension is a stroke of the character, arranged in stroke order. If stacked on the 0th dimension, it forms a complete character. Also, the non-zero values in each slice matrix are the label values of that stroke.
+
+This dataset retains as much information as possible for researchers to use.
 
 #### Usage Instructions
 
